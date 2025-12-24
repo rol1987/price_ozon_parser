@@ -24,7 +24,7 @@ def get_stealth_driver_chrome(opt=None):
     
     # Просто запускаем Chrome без сложных настроек
     browser = playwright.chromium.launch(
-        headless=False,
+        headless=True,
         channel="chrome",
         args=args
     )
@@ -151,7 +151,7 @@ for idx, article in enumerate(values_list):
         url = f'https://www.ozon.ru/product/{article}/'
         
         page.goto(url, wait_until="domcontentloaded", timeout=10000)
-        time.sleep(3)
+        time.sleep(2)
 
         html = page.content()
         soup = BeautifulSoup(html, 'html.parser')
