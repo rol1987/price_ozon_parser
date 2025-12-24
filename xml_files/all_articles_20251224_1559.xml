@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yml_catalog date="2025-12-24 15:59">
+  <shop>
+    <name>SONOX</name>
+    <company></company>
+    <url>https://kit8576.yastore.yandex.ru</url>
+    <currencies>
+      <currency id="RUB" rate="1"/>
+    </currencies>
+    <categories></categories>
+    <offers>
+      <offer id="mp-1625675009" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1625675009</param>
+      </offer>
+      <offer id="mp-3270473210" available="true">
+        <price>0</price>
+        <param name="Артикул МП">3270473210</param>
+      </offer>
+      <offer id="mp-3270382173" available="true">
+        <price>0</price>
+        <param name="Артикул МП">3270382173</param>
+      </offer>
+      <offer id="mp-3270272244" available="true">
+        <price>0</price>
+        <param name="Артикул МП">3270272244</param>
+      </offer>
+      <offer id="mp-3270166762" available="true">
+        <price>0</price>
+        <param name="Артикул МП">3270166762</param>
+      </offer>
+      <offer id="mp-3269977989" available="true">
+        <price>0</price>
+        <param name="Артикул МП">3269977989</param>
+      </offer>
+      <offer id="mp-1625674982" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1625674982</param>
+      </offer>
+      <offer id="mp-1541858007" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1541858007</param>
+      </offer>
+      <offer id="mp-1541858017" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1541858017</param>
+      </offer>
+      <offer id="mp-3253909227" available="true">
+        <price>0</price>
+        <param name="Артикул МП">3253909227</param>
+      </offer>
+      <offer id="mp-3210122784" available="true">
+        <price>0</price>
+        <param name="Артикул МП">3210122784</param>
+      </offer>
+      <offer id="mp-3210106797" available="true">
+        <price>0</price>
+        <param name="Артикул МП">3210106797</param>
+      </offer>
+      <offer id="mp-3210066279" available="true">
+        <price>0</price>
+        <param name="Артикул МП">3210066279</param>
+      </offer>
+      <offer id="mp-2491620526" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2491620526</param>
+      </offer>
+      <offer id="mp-2321380998" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2321380998</param>
+      </offer>
+      <offer id="mp-2759801405" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2759801405</param>
+      </offer>
+      <offer id="mp-2759815203" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2759815203</param>
+      </offer>
+      <offer id="mp-2759810212" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2759810212</param>
+      </offer>
+      <offer id="mp-2044563333" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2044563333</param>
+      </offer>
+      <offer id="mp-2044556699" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2044556699</param>
+      </offer>
+      <offer id="mp-2044551663" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2044551663</param>
+      </offer>
+      <offer id="mp-2044543736" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2044543736</param>
+      </offer>
+      <offer id="mp-2044531501" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2044531501</param>
+      </offer>
+      <offer id="mp-1973337019" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1973337019</param>
+      </offer>
+      <offer id="mp-1973243230" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1973243230</param>
+      </offer>
+      <offer id="mp-1973223730" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1973223730</param>
+      </offer>
+      <offer id="mp-1973208631" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1973208631</param>
+      </offer>
+      <offer id="mp-1906914294" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1906914294</param>
+      </offer>
+      <offer id="mp-1906914106" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1906914106</param>
+      </offer>
+      <offer id="mp-1906914125" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1906914125</param>
+      </offer>
+      <offer id="mp-1906914352" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1906914352</param>
+      </offer>
+      <offer id="mp-1900249074" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1900249074</param>
+      </offer>
+      <offer id="mp-1900248999" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1900248999</param>
+      </offer>
+      <offer id="mp-1900249024" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1900249024</param>
+      </offer>
+      <offer id="mp-1900249092" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1900249092</param>
+      </offer>
+      <offer id="mp-2102762419" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2102762419</param>
+      </offer>
+      <offer id="mp-1702241767" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1702241767</param>
+      </offer>
+      <offer id="mp-1702241815" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1702241815</param>
+      </offer>
+      <offer id="mp-1625702806" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1625702806</param>
+      </offer>
+      <offer id="mp-1625675009" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1625675009</param>
+      </offer>
+      <offer id="mp-1625675003" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1625675003</param>
+      </offer>
+      <offer id="mp-1625702804" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1625702804</param>
+      </offer>
+      <offer id="mp-1625702809" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1625702809</param>
+      </offer>
+      <offer id="mp-1625702810" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1625702810</param>
+      </offer>
+      <offer id="mp-1615271647" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1615271647</param>
+      </offer>
+      <offer id="mp-1615267416" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1615267416</param>
+      </offer>
+      <offer id="mp-1615265029" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1615265029</param>
+      </offer>
+      <offer id="mp-1819793264" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1819793264</param>
+      </offer>
+      <offer id="mp-1819635898" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1819635898</param>
+      </offer>
+      <offer id="mp-1819635909" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1819635909</param>
+      </offer>
+      <offer id="mp-1708246057" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1708246057</param>
+      </offer>
+      <offer id="mp-1656218029" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1656218029</param>
+      </offer>
+      <offer id="mp-1581897000" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1581897000</param>
+      </offer>
+      <offer id="mp-1581896963" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1581896963</param>
+      </offer>
+      <offer id="mp-1581819083" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1581819083</param>
+      </offer>
+      <offer id="mp-1541858063" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1541858063</param>
+      </offer>
+      <offer id="mp-1541858055" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1541858055</param>
+      </offer>
+      <offer id="mp-1541858027" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1541858027</param>
+      </offer>
+      <offer id="mp-1541858008" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1541858008</param>
+      </offer>
+      <offer id="mp-1541858021" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1541858021</param>
+      </offer>
+      <offer id="mp-1541858041" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1541858041</param>
+      </offer>
+      <offer id="mp-1541857975" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1541857975</param>
+      </offer>
+      <offer id="mp-2102768953" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2102768953</param>
+      </offer>
+      <offer id="mp-2102756726" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2102756726</param>
+      </offer>
+      <offer id="mp-2102743237" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2102743237</param>
+      </offer>
+      <offer id="mp-2102745045" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2102745045</param>
+      </offer>
+      <offer id="mp-1948532820" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1948532820</param>
+      </offer>
+      <offer id="mp-1948532836" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1948532836</param>
+      </offer>
+      <offer id="mp-1948534138" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1948534138</param>
+      </offer>
+      <offer id="mp-1830647875" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1830647875</param>
+      </offer>
+      <offer id="mp-1656218841" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1656218841</param>
+      </offer>
+      <offer id="mp-1541459501" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1541459501</param>
+      </offer>
+      <offer id="mp-1541459833" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1541459833</param>
+      </offer>
+      <offer id="mp-1525468332" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1525468332</param>
+      </offer>
+      <offer id="mp-3210209852" available="true">
+        <price>0</price>
+        <param name="Артикул МП">3210209852</param>
+      </offer>
+      <offer id="mp-3210185850" available="true">
+        <price>0</price>
+        <param name="Артикул МП">3210185850</param>
+      </offer>
+      <offer id="mp-3210171973" available="true">
+        <price>0</price>
+        <param name="Артикул МП">3210171973</param>
+      </offer>
+      <offer id="mp-1702241400" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1702241400</param>
+      </offer>
+      <offer id="mp-1902389602" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1902389602</param>
+      </offer>
+      <offer id="mp-1902389594" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1902389594</param>
+      </offer>
+      <offer id="mp-1690078336" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1690078336</param>
+      </offer>
+      <offer id="mp-1658622929" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1658622929</param>
+      </offer>
+      <offer id="mp-1658622084" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1658622084</param>
+      </offer>
+      <offer id="mp-1658621458" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1658621458</param>
+      </offer>
+      <offer id="mp-1658615750" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1658615750</param>
+      </offer>
+      <offer id="mp-1658520641" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1658520641</param>
+      </offer>
+      <offer id="mp-1658514660" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1658514660</param>
+      </offer>
+      <offer id="mp-1658502275" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1658502275</param>
+      </offer>
+      <offer id="mp-1658486533" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1658486533</param>
+      </offer>
+      <offer id="mp-1702241741" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1702241741</param>
+      </offer>
+      <offer id="mp-1702241530" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1702241530</param>
+      </offer>
+      <offer id="mp-1702241367" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1702241367</param>
+      </offer>
+      <offer id="mp-1625674989" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1625674989</param>
+      </offer>
+      <offer id="mp-1608964161" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1608964161</param>
+      </offer>
+      <offer id="mp-1608964068" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1608964068</param>
+      </offer>
+      <offer id="mp-1608963933" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1608963933</param>
+      </offer>
+      <offer id="mp-1608960413" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1608960413</param>
+      </offer>
+      <offer id="mp-1608958424" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1608958424</param>
+      </offer>
+      <offer id="mp-1608957459" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1608957459</param>
+      </offer>
+      <offer id="mp-2102780030" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2102780030</param>
+      </offer>
+      <offer id="mp-2102780536" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2102780536</param>
+      </offer>
+      <offer id="mp-2102751560" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2102751560</param>
+      </offer>
+      <offer id="mp-2102752992" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2102752992</param>
+      </offer>
+      <offer id="mp-2102751375" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2102751375</param>
+      </offer>
+      <offer id="mp-1625702802" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1625702802</param>
+      </offer>
+      <offer id="mp-1625675005" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1625675005</param>
+      </offer>
+      <offer id="mp-1581897053" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1581897053</param>
+      </offer>
+      <offer id="mp-1581897066" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1581897066</param>
+      </offer>
+      <offer id="mp-1581819234" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1581819234</param>
+      </offer>
+      <offer id="mp-1581896985" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1581896985</param>
+      </offer>
+      <offer id="mp-1581819289" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1581819289</param>
+      </offer>
+      <offer id="mp-1581897002" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1581897002</param>
+      </offer>
+      <offer id="mp-1581897115" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1581897115</param>
+      </offer>
+      <offer id="mp-1581897044" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1581897044</param>
+      </offer>
+      <offer id="mp-1541857986" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1541857986</param>
+      </offer>
+      <offer id="mp-1696048963" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1696048963</param>
+      </offer>
+      <offer id="mp-1625675010" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1625675010</param>
+      </offer>
+      <offer id="mp-1625675008" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1625675008</param>
+      </offer>
+      <offer id="mp-1625702837" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1625702837</param>
+      </offer>
+      <offer id="mp-1625675001" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1625675001</param>
+      </offer>
+      <offer id="mp-1625674986" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1625674986</param>
+      </offer>
+      <offer id="mp-1581819543" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1581819543</param>
+      </offer>
+      <offer id="mp-1581819243" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1581819243</param>
+      </offer>
+      <offer id="mp-1581819270" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1581819270</param>
+      </offer>
+      <offer id="mp-1581819570" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1581819570</param>
+      </offer>
+      <offer id="mp-1541858013" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1541858013</param>
+      </offer>
+      <offer id="mp-1541858039" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1541858039</param>
+      </offer>
+      <offer id="mp-1541858004" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1541858004</param>
+      </offer>
+      <offer id="mp-1541858058" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1541858058</param>
+      </offer>
+      <offer id="mp-1541857982" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1541857982</param>
+      </offer>
+      <offer id="mp-3196043973" available="true">
+        <price>0</price>
+        <param name="Артикул МП">3196043973</param>
+      </offer>
+      <offer id="mp-3196028781" available="true">
+        <price>0</price>
+        <param name="Артикул МП">3196028781</param>
+      </offer>
+      <offer id="mp-3196005905" available="true">
+        <price>0</price>
+        <param name="Артикул МП">3196005905</param>
+      </offer>
+      <offer id="mp-3195992194" available="true">
+        <price>0</price>
+        <param name="Артикул МП">3195992194</param>
+      </offer>
+      <offer id="mp-3195912616" available="true">
+        <price>0</price>
+        <param name="Артикул МП">3195912616</param>
+      </offer>
+      <offer id="mp-3138800076" available="true">
+        <price>0</price>
+        <param name="Артикул МП">3138800076</param>
+      </offer>
+      <offer id="mp-2321389233" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2321389233</param>
+      </offer>
+      <offer id="mp-2321377513" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2321377513</param>
+      </offer>
+      <offer id="mp-2321382394" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2321382394</param>
+      </offer>
+      <offer id="mp-2321377676" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2321377676</param>
+      </offer>
+      <offer id="mp-2321376862" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2321376862</param>
+      </offer>
+      <offer id="mp-2321388629" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2321388629</param>
+      </offer>
+      <offer id="mp-2275499253" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2275499253</param>
+      </offer>
+      <offer id="mp-2275499285" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2275499285</param>
+      </offer>
+      <offer id="mp-2275499317" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2275499317</param>
+      </offer>
+      <offer id="mp-2275499227" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2275499227</param>
+      </offer>
+      <offer id="mp-1702241508" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1702241508</param>
+      </offer>
+      <offer id="mp-1702241415" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1702241415</param>
+      </offer>
+      <offer id="mp-2491620845" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2491620845</param>
+      </offer>
+      <offer id="mp-2491620636" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2491620636</param>
+      </offer>
+      <offer id="mp-2491620641" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2491620641</param>
+      </offer>
+      <offer id="mp-2491620734" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2491620734</param>
+      </offer>
+      <offer id="mp-2491620695" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2491620695</param>
+      </offer>
+      <offer id="mp-2491620378" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2491620378</param>
+      </offer>
+      <offer id="mp-2491620448" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2491620448</param>
+      </offer>
+      <offer id="mp-2491620447" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2491620447</param>
+      </offer>
+      <offer id="mp-2491620619" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2491620619</param>
+      </offer>
+      <offer id="mp-2491620383" available="true">
+        <price>0</price>
+        <param name="Артикул МП">2491620383</param>
+      </offer>
+      <offer id="mp-1970420630" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1970420630</param>
+      </offer>
+      <offer id="mp-1970418744" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1970418744</param>
+      </offer>
+      <offer id="mp-1970403221" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1970403221</param>
+      </offer>
+      <offer id="mp-1970385759" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1970385759</param>
+      </offer>
+      <offer id="mp-1970386165" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1970386165</param>
+      </offer>
+      <offer id="mp-1970385330" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1970385330</param>
+      </offer>
+      <offer id="mp-1615243973" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1615243973</param>
+      </offer>
+      <offer id="mp-1615216676" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1615216676</param>
+      </offer>
+      <offer id="mp-1615217704" available="true">
+        <price>0</price>
+        <param name="Артикул МП">1615217704</param>
+      </offer>
+    </offers>
+  </shop>
+</yml_catalog>
