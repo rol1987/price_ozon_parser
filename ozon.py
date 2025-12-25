@@ -1,5 +1,5 @@
 import pandas as pd
-import time, os, logging, random
+import time, os, logging, random, schedule, datetime, threading, sys
 from xml.dom import minidom
 from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
@@ -8,8 +8,8 @@ from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeo
 logging.getLogger('playwright').setLevel(logging.WARNING)
 logging.getLogger('urllib3').setLevel(logging.WARNING)
 
-import os
-from playwright.sync_api import sync_playwright
+# Флаг для отслеживания выполнения
+parsing_in_progress = False
 
 def get_stealth_driver_chrome(opt=None):
     """Упрощенная версия для отладки"""
@@ -123,121 +123,185 @@ def create_yml_for_all_articles(articles_data):
     
     return pretty_xml
 
-# Основной код
-cwd = os.path.dirname(__file__)
-full_path = os.path.join(cwd, 'art.xlsx')  
-
-df = pd.read_excel(full_path, usecols=[0], header=None)
-values_list = df[0].dropna().tolist()
-
-print(f"Найдено {len(values_list)} артикулов")
-
-opt = "--force-device-scale-factor=1"
-page, browser, playwright = get_stealth_driver_chrome(opt)
-
-# Создаем папку для XML файлов
-xml_folder = os.path.join(cwd, 'xml_files')
-os.makedirs(xml_folder, exist_ok=True)
-
-# Список для хранения данных по всем артикулам
-all_articles_data = []
-
-# ЦИКЛ ПО ВСЕМ АРТИКУЛАМ
-for idx, article in enumerate(values_list):
-# for idx, article in enumerate(values_list[0:10]):  # Тестово 10 артикулов
+def execute_parsing():
+    """Основная логика парсинга"""
+    global parsing_in_progress
+    
     try:
-        print(f"\n[{idx+1}/{len(values_list)}] Обрабатываю артикул: {article}")
+        current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        print(f"\n{'='*60}")
+        print(f"🚀 Запуск парсера: {current_time}")
+        print(f"{'='*60}")
         
-        url = f'https://www.ozon.ru/product/{article}/'
+        # Основной код парсинга
+        cwd = os.path.dirname(__file__)
+        full_path = os.path.join(cwd, 'art.xlsx')  
         
-        page.goto(url, wait_until="domcontentloaded", timeout=10000)
-        time.sleep(2)
-
-        html = page.content()
-        soup = BeautifulSoup(html, 'html.parser')
-
-        # Находим ВСЕ span на странице
-        all_spans = soup.find_all('span')
-
-        # Создаем список для хранения информации о span
-        span_list = []
-
-        # Записываем все span в список
-        for span in all_spans:
-            span_list.append(span.text)
-
-        # if str(article) == '2321380998':
-            # print(span_list)
-            # time.sleep(111111)
-            
-        # Ищем цену
-        price = 0  # Значение по умолчанию
-        for i, item in enumerate(span_list):
-            if item and 'c Ozon Картой' == item:
-                # Проверяем предыдущий элемент
-                if i > 0:
-                    previous_item = span_list[i-1]
+        df = pd.read_excel(full_path, usecols=[0], header=None)
+        values_list = df[0].dropna().tolist()
+        
+        print(f"Найдено {len(values_list)} артикулов")
+        
+        opt = "--force-device-scale-factor=1"
+        page, browser, playwright = get_stealth_driver_chrome(opt)
+        
+        # Создаем папку для XML файлов
+        xml_folder = os.path.join(cwd, 'xml_files')
+        os.makedirs(xml_folder, exist_ok=True)
+        
+        # Список для хранения данных по всем артикулам
+        all_articles_data = []
+        
+        # ЦИКЛ ПО ВСЕМ АРТИКУЛАМ
+        for idx, article in enumerate(values_list):
+            try:
+                print(f"\n[{idx+1}/{len(values_list)}] Обрабатываю артикул: {article}")
+                
+                url = f'https://www.ozon.ru/product/{article}/'
+                
+                page.goto(url, wait_until="domcontentloaded", timeout=10000)
+                time.sleep(2)
+        
+                html = page.content()
+                soup = BeautifulSoup(html, 'html.parser')
+        
+                # Находим ВСЕ span на странице
+                all_spans = soup.find_all('span')
+        
+                # Создаем список для хранения информации о span
+                span_list = []
+        
+                # Записываем все span в список
+                for span in all_spans:
+                    span_list.append(span.text)
                     
-                    # Проверяем, содержатся ли цифры
-                    if previous_item and any(char.isdigit() for char in previous_item):
-                        # Удаляем всё, кроме цифр
-                        only_digits = ''.join(filter(str.isdigit, previous_item))
-                        
-                        if only_digits:  # Проверяем, что не пустая строка
-                            price = str(only_digits)
-                            print(f"  Найдена цена: {price}")
-                            break
+                # Ищем цену
+                price = 0  # Значение по умолчанию
+                for i, item in enumerate(span_list):
+                    if item and 'c Ozon Картой' == item:
+                        # Проверяем предыдущий элемент
+                        if i > 0:
+                            previous_item = span_list[i-1]
+                            
+                            # Проверяем, содержатся ли цифры
+                            if previous_item and any(char.isdigit() for char in previous_item):
+                                # Удаляем всё, кроме цифр
+                                only_digits = ''.join(filter(str.isdigit, previous_item))
+                                
+                                if only_digits:  # Проверяем, что не пустая строка
+                                    price = str(only_digits)
+                                    print(f"  Найдена цена: {price}")
+                                    break
+                
+                # Добавляем данные артикула в общий список
+                all_articles_data.append({
+                    'article': article,
+                    'price': price,
+                    'status': 'успешно'
+                })
+                
+                print(f"  Артикул {article} обработан, цена: {price}")
+                
+            except Exception as e:
+                print(f"Ошибка при обработке артикула {article}: {e}")
+                
+                # Добавляем артикул с ошибкой
+                all_articles_data.append({
+                    'article': article,
+                    'price': 0,
+                    'status': f'ошибка: {str(e)[:50]}'
+                })
+                continue
         
-        # Добавляем данные артикула в общий список
-        all_articles_data.append({
-            'article': article,
-            'price': price,
-            'status': 'успешно'
-        })
+        print("\nВсе артикулы обработаны!")
         
-        print(f"  Артикул {article} обработан, цена: {price}")
+        # Создаем один XML файл со всеми артикулами
+        try:
+            yml_content = create_yml_for_all_articles(all_articles_data)
+            
+            # Сохраняем XML файл
+            yml_filename = f'all_articles_{time.strftime("%Y%m%d_%H%M")}.xml'
+            yml_path = os.path.join(xml_folder, yml_filename)
+            
+            with open(yml_path, 'wb') as yml_file:
+                yml_file.write(yml_content)
+            
+            print(f"\n✅ Единый XML файл создан: {yml_filename}")
+            print(f"   Сохранено {len(all_articles_data)} артикулов")
+            
+        except Exception as e:
+            print(f"Ошибка при создании XML файла: {e}")
+        
+        # Закрываем браузер
+        page.close()
+        browser.close()
+        playwright.stop()
+        
+        print(f"\nXML файлы сохранены в папке: {xml_folder}")
+        print(f"\n✅ Парсинг успешно завершен в {datetime.datetime.now().strftime('%H:%M:%S')}")
         
     except Exception as e:
-        print(f"Ошибка при обработке артикула {article}: {e}")
-        
-        # Добавляем артикул с ошибкой
-        all_articles_data.append({
-            'article': article,
-            'price': 0,
-            'status': f'ошибка: {str(e)[:50]}'
-        })
-        continue
-
-print("\nВсе артикулы обработаны!")
-
-# Создаем один XML файл со всеми артикулами
-try:
-    yml_content = create_yml_for_all_articles(all_articles_data)
+        print(f"\n❌ Ошибка при выполнении парсинга: {e}")
+        import traceback
+        traceback.print_exc()
     
-    # Сохраняем XML файл
-    yml_filename = f'all_articles_{time.strftime("%Y%m%d_%H%M")}.xml'
-    yml_path = os.path.join(xml_folder, yml_filename)
-    
-    with open(yml_path, 'wb') as yml_file:
-        yml_file.write(yml_content)
-    
-    print(f"\n✅ Единый XML файл создан: {yml_filename}")
-    print(f"   Сохранено {len(all_articles_data)} артикулов")
-    
-except Exception as e:
-    print(f"Ошибка при создании XML файла: {e}")
+    finally:
+        parsing_in_progress = False
 
-# Закрываем браузер
-page.close()
-browser.close()
-playwright.stop()
+def run_parser_job():
+    """Запуск парсера в отдельном потоке"""
+    global parsing_in_progress
+    
+    if parsing_in_progress:
+        print("Парсинг уже выполняется, пропускаю запуск...")
+        return
+    
+    parsing_in_progress = True
+    
+    # Запускаем в отдельном потоке, чтобы не блокировать планировщик
+    thread = threading.Thread(target=execute_parsing)
+    thread.daemon = True
+    thread.start()
 
-# Выводим статистику
-success_count = sum(1 for item in all_articles_data if item['price'] > 0)
-error_count = sum(1 for item in all_articles_data if item['price'] == 0)
+def input_listener():
+    """Поток для прослушивания ввода пользователя - просто ждет Enter"""
+    while True:
+        try:
+            # Просто ждем Enter
+            input("\nНажмите Enter для принудительного запуска парсера или Ctrl+C для выхода...")
+            run_parser_job()
+        except KeyboardInterrupt:
+            print("\nЗавершение работы сервиса...")
+            os._exit(0)
+        except:
+            break
 
-print(f"\n📊 СТАТИСТИКА:")
-print(f"   Всего артикулов: {len(all_articles_data)}")
-print(f"   С успешной ценой: {success_count}")
-print(f"   Без цены/с ошибкой: {error_count}")
-print(f"\nXML файлы сохранены в папке: {xml_folder}")
+if __name__ == "__main__":
+    # Настраиваем расписание
+    schedule.every().day.at("06:00").do(run_parser_job)
+    
+    print("="*60)
+    print("Сервис ежедневного парсинга Ozon запущен")
+    print(f"Текущее время: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print("Следующий автоматический запуск в 6:00 утра")
+    print("="*60)
+    
+    # Проверяем аргументы командной строки
+    if len(sys.argv) > 1 and sys.argv[1].lower() == "now":
+        print("\nЗапуск парсера немедленно...")
+        run_parser_job()
+    
+    # Запускаем поток для ввода
+    input_thread = threading.Thread(target=input_listener, daemon=True)
+    input_thread.start()
+    
+    # Основной цикл
+    try:
+        while True:
+            schedule.run_pending()
+            time.sleep(60)  # Проверяем каждую минуту
+            
+    except KeyboardInterrupt:
+        print("\n\nСервис остановлен (Ctrl+C)")
+    
+    print("Сервис завершил работу")
