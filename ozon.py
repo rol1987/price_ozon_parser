@@ -1,8 +1,9 @@
 import pandas as pd
-import time, os, logging, random, schedule, datetime, threading, sys
+import time, os, logging, random, schedule, datetime, threading, sys, requests, base64
 from xml.dom import minidom
 from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
+
 
 # Отключаем логирование
 logging.getLogger('playwright').setLevel(logging.WARNING)
@@ -145,15 +146,14 @@ def execute_parsing():
         opt = "--force-device-scale-factor=1"
         page, browser, playwright = get_stealth_driver_chrome(opt)
         
-        # Создаем папку для XML файлов
-        xml_folder = os.path.join(cwd, 'xml_files')
-        os.makedirs(xml_folder, exist_ok=True)
+
         
         # Список для хранения данных по всем артикулам
         all_articles_data = []
         
         # ЦИКЛ ПО ВСЕМ АРТИКУЛАМ
-        for idx, article in enumerate(values_list):
+        for idx, article in enumerate(values_list[0:1]):
+        # for idx, article in enumerate(values_list):
             try:
                 print(f"\n[{idx+1}/{len(values_list)}] Обрабатываю артикул: {article}")
                 
@@ -220,8 +220,10 @@ def execute_parsing():
             yml_content = create_yml_for_all_articles(all_articles_data)
             
             # Сохраняем XML файл
-            yml_filename = f'all_articles_{time.strftime("%Y%m%d_%H%M")}.xml'
-            yml_path = os.path.join(xml_folder, yml_filename)
+            yml_filename = 'all_articles.xml'
+            cwd = os.path.dirname(__file__)
+            # yml_filename = f'all_articles_{time.strftime("%Y%m%d_%H%M")}.xml'
+            yml_path = os.path.join(cwd, yml_filename)
             
             with open(yml_path, 'wb') as yml_file:
                 yml_file.write(yml_content)
@@ -237,8 +239,120 @@ def execute_parsing():
         browser.close()
         playwright.stop()
         
-        print(f"\nXML файлы сохранены в папке: {xml_folder}")
         print(f"\n✅ Парсинг успешно завершен в {datetime.datetime.now().strftime('%H:%M:%S')}")
+
+
+
+
+
+
+
+
+
+
+# _________________________________________________________________________________________________
+
+        def upload_to_github(f_path, token, repo_owner, repo_name):
+            
+            # Проверяем существование файла
+            time.sleep(3)
+            if not os.path.exists(f_path):
+                print(f"❌ Файл не найден: {f_path}")
+                return None
+            
+
+            repo_path = os.path.basename(f_path)
+
+            # repo_path = "all_articles.xml"
+
+
+            # Читаем файл
+            with open(f_path, 'rb') as file:
+                content = file.read()
+
+            
+            # Кодируем в base64
+            encoded_content = base64.b64encode(content).decode('utf-8')
+            
+            # URL API GitHub
+            url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/contents/{repo_path}"
+            # print(url)
+            # Заголовки
+            headers = {
+                        "Accept": "application/vnd.github+json",
+                        "Authorization": f"Bearer {token}"
+                    }
+                        
+            # Проверяем, существует ли файл
+            response = requests.get(url, headers=headers)
+            sha = None
+            print(111, response.status_code)
+            if response.status_code == 200:
+                sha = response.json().get("sha")
+                commit_msg = f"Update {os.path.basename(f_path)}"
+            else:
+                commit_msg = f"Add {os.path.basename(f_path)}"
+            
+            # Данные для загрузки
+            data = {
+
+                "message": commit_msg,
+                "content": encoded_content,
+                "branch": "main"
+            }
+            
+            if sha:
+                data["sha"] = sha
+            
+            # Загружаем
+            response = requests.put(
+                url=url, 
+                headers=headers,  # заголовки с метаинформацией
+                json=data         # данные запроса (тело запроса)
+            )
+            print(222, response.status_code)
+
+                    
+
+
+        if __name__ == "__main__":
+            # === НАСТРОЙКИ ДЛЯ РЕПОЗИТОРИЯ ===
+            TOKEN = "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"  # токен
+            REPO_OWNER = "rol1987"  # username
+            REPO_NAME = "price_ozon_parser"  # репозиторий
+
+            # === УКАЖИТЕ ПУТЬ К ВАШЕМУ XML ФАЙЛУ ===
+            f_path = yml_path  # Замените на ваш путь
+            
+            # === ЗАГРУЗКА ФАЙЛА ===
+            print("=" * 50)
+            print(f"ЗАГРУЗКА В РЕПОЗИТОРИЙ: {REPO_OWNER}/{REPO_NAME}")
+            print("=" * 50)
+            
+            # Проверяем файл
+            if not os.path.exists(f_path):
+                print(f"❌ Файл не найден: {f_path}")
+                print("Проверьте правильность пути.")
+            else:
+                # Загружаем файл
+                url = upload_to_github(f_path, TOKEN, REPO_OWNER, REPO_NAME)
+                
+                if url:
+                    print("\n✅ Готово! Файл доступен по ссылке:")
+                    print(f"{url}")
+
+# _________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
         
     except Exception as e:
         print(f"\n❌ Ошибка при выполнении парсинга: {e}")
@@ -305,3 +419,9 @@ if __name__ == "__main__":
         print("\n\nСервис остановлен (Ctrl+C)")
     
     print("Сервис завершил работу")
+
+
+
+
+
+
