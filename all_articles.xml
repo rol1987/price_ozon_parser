@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<yml_catalog date="2026-01-05 11:41">
+<yml_catalog date="2026-01-05 11:42">
   <shop>
     <name>SONOX</name>
     <company></company>
@@ -12,14 +12,6 @@
       <offer id="mp-1625675009" available="true">
         <price>18103</price>
         <param name="Артикул МП">1625675009</param>
-      </offer>
-      <offer id="mp-3270473210" available="true">
-        <price>0</price>
-        <param name="Артикул МП">3270473210</param>
-      </offer>
-      <offer id="mp-3270382173" available="true">
-        <price>0</price>
-        <param name="Артикул МП">3270382173</param>
       </offer>
     </offers>
   </shop>
