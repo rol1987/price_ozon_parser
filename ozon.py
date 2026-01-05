@@ -317,7 +317,7 @@ def execute_parsing():
 
         if __name__ == "__main__":
             # === НАСТРОЙКИ ДЛЯ РЕПОЗИТОРИЯ ===
-            TOKEN = "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"  # токен
+            TOKEN = ""  # токен
             REPO_OWNER = "rol1987"  # username
             REPO_NAME = "price_ozon_parser"  # репозиторий
 
